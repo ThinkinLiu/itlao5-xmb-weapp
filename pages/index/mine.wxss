@@ -1,0 +1,94 @@
+/* pages/index/mine.wxss */
+
+.head-height {
+  height: 240rpx;
+}
+
+.head {
+  display:flex;
+  width: 100%;
+  background-color: #449f45;
+  align-items: center;
+}
+
+.login-button {
+  opacity: 0; 
+  width: 100%;
+  position: absolute;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 240rpx;
+  position: absolute;
+}
+
+.userinfo-unbind {
+  width: 100%;
+  height: 240rpx;
+  position: relative;
+}
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #ffffff;
+  font-size: 42rpx;
+}
+
+.list-wrapper {
+  width: 100%;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.div-line{
+  background: #E0E3DA;
+  width: 100%;
+  height: 3rpx;
+}
+
+.list-item {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.list-item_active {
+  background-color: #fbf9fe;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 120rpx;
+}
+.item-text {
+  color: #333333;
+  margin-left: 20rpx;
+  font-size: 38rpx;
+  flex-grow: 1;
+}
+.item-array {
+  color: #333333;
+  margin-right: 50rpx;
+  font-size: 38rpx;
+  width: 32rpx;
+}
+
+.item-image {
+  margin-left: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.marginTop {
+  margin-top: 30rpx;
+}

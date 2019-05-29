@@ -1,0 +1,100 @@
+/**index.wxss**/
+
+.title {
+  color: #333333;
+  margin-top: 40rpx;
+  margin-left: 80rpx;
+  width: 100%;
+  font-size: 45rpx;
+}
+.list-wrapper {
+  width: 100%;
+}
+
+.list-item {
+  margin: 40rpx;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  border: 3rpx solid #E0E3DA;
+  box-shadow:1rpx 1rpx 1rpx 1rpx #E0E3DA;
+  background-color: #ffffff;
+}
+
+.list-item_active {
+  background-color: #fbf9fe;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 120rpx;
+}
+.item-text-view {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.margintop-text-hint {
+  margin-top: 20rpx 
+}
+.item-text {
+  color: #333333;
+  font-size: 38rpx;
+}
+.item-text-hint {
+  color: #999999;
+  font-size: 35rpx;
+}
+.item-array {
+  color: #333333;
+  margin-right: -20rpx;
+  font-size: 38rpx;
+  width: 32rpx;
+}
+
+.item-image {
+  left: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.modal-bg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color:rgba(0, 0, 0, .5);
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.modal-content-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background-color:#fff;
+  margin: 45% 10%;
+  padding: 30px 10px;
+  border-radius: 20rpx;
+  border: 3rpx solid rgb(189, 236, 248);
+}
+
+.modal-text {
+  text-align: center;
+  font-size: 42rpx;
+  color: #333333; 
+}
+
+.modal-btn {
+  text-align: center;
+  font-size: 38rpx;
+  padding: 0rpx 30rpx;
+  color: #333333; 
+  border-radius: 20rpx;
+  border: 3rpx solid rgb(24, 228, 255);
+  margin-top: 40rpx;
+}

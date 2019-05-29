@@ -1,0 +1,5 @@
+<!--pages/error/update.wxml-->
+<view class='vertical'>
+  <image class='image' src='../../images/icon-update.png' mode='widthFix'></image>
+  <text class='text'>功能升级中...</text>
+</view>

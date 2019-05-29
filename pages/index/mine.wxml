@@ -1,0 +1,35 @@
+<!--pages/index/mine.wxml-->
+
+<view class="container">
+  <view class='head head-height'>
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <view class="userinfo-unbind">
+        <view class="userinfo">
+          <image class="userinfo-avatar" src="../../images/icon-head.png" mode="cover"></image>
+          <text class="userinfo-nickname">微信授权</text>
+        </view>
+        <button class="login-button head-height" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button><!--不可见，用于触发微信授权的按钮 -->
+      </view>
+    </block>
+    <block wx:else>
+      <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="list-wrapper marginTop">
+    <view class="div-line"></view>
+    <block wx:for="{{menuitems}}" wx:key="item">
+      <navigator url="{{item.url}}" catchtap='{{item.tap}}' class="list-item" hover-class="list-item_active">
+        <view class='item'>
+          <image class='item-image' src='{{item.icon}}'></image>
+          <text class="item-text">{{item.text}}</text>
+          <image class='item-array' src='../../images/array.png'  mode='widthFix'></image>
+        </view>
+        <view class="div-line"></view>
+      </navigator>
+    </block>
+  </view>
+</view>
+

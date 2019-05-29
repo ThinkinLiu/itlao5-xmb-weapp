@@ -1,0 +1,139 @@
+/* pages/user/userInfo.wxss */
+.horizon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.vertical{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-blcak {
+  background-color: #000000;
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  margin-left:40rpx;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  padding-right:40rpx;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  padding-right:40rpx;
+}
+.line-height {
+  width: 100%;
+  height: 100rpx;
+}
+.text {
+  font-size: 32rpx;
+  color: #666666;
+}
+.text-title {
+  font-size: 36rpx;
+  color: #333333;
+}
+.text-title-big {
+  font-size: 42rpx;
+  color: #333333;
+}
+/* 横着的分割View样式 */
+/*分割线样式*/
+.div-line {
+  background: #E0E3DA;
+  width: 100%;
+  height: 3rpx;
+}
+.text-right {
+  text-align: right;
+}
+.btn-submit {
+  margin-top: 80rpx;
+  padding: 15rpx;
+  width: 80%;
+  color: #ffffff;
+  font-size: 42rpx;
+  text-align:center;
+  background-color: #449f45;
+  border-radius: 20rpx;
+  border: 3rpx solid #449f45;
+  box-shadow:2rpx 2rpx 2rpx 2rpx #E0E3DA;
+}
+.btn-submit-hover {
+  background-color: #219754;
+}
+.width100{
+  width: 100%
+}
+.top10{
+  margin-top: 10rpx;
+}
+
+.top40{
+  margin-top: 40rpx;
+}
+
+.margin40{
+  margin-top: 40rpx;
+}
+
+.padding40{
+  padding: 40rpx;
+}
+
+.flex-grow1 {
+  flex-grow: 1;
+}
+
+.zoom {
+  zoom: .8;
+}
+
+.modal {
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.text-modal {
+  font-size: 32rpx;
+  color: #666666;
+  border-radius: 20rpx;
+  border: 3rpx solid #E0E3DA;
+  box-shadow:2rpx 2rpx 2rpx 2rpx #E0E3DA;
+}
+
+.input-modal {
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.captcha-modal {
+  font-size: 24rpx;
+  width: 190rpx;
+  height: 60rpx;
+  color: #ffffff;
+  text-align: center;
+  background-color: #449f45;
+  border-radius: 10rpx;
+  border: 3rpx solid #449f45;
+  box-shadow:2rpx 2rpx 2rpx 2rpx #E0E3DA;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.icon-ValidCode{
+  width: 186rpx;
+  height: 50rpx; 
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

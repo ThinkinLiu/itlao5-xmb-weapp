@@ -1,0 +1,78 @@
+<!--pages/user/userInfo.wxml-->
+<!-- 引入wxs脚本 -->
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+
+<modal title="{{cardNoModal.title}}" hidden="{{cardNoModal.hidden}}" confirm-text="确认" cancel-text="取消" bindconfirm="cardNoModalConfirm" bindcancel="cardNoModalCancel">
+  <view class='vertical top10'>
+    <view class='horizon line-height'>
+      <input class="input-modal flex-grow1" placeholder='{{cardNoModal.placeHolder}}' bindinput='cardNoModalInput' value='{{cardNoModal.inputText}}' maxlength='20'></input>
+    </view>
+    <view class='div-line'></view>  
+  </view>
+</modal>
+
+<modal title="{{phoneModal.title}}" hidden="{{phoneModal.hidden}}" confirm-text="确认" cancel-text="取消" bindconfirm="phoneModalConfirm" bindcancel="phoneModalCancel">
+  <view class='vertical top10'>
+    <view class='horizon line-height'>
+      <input class="input-modal flex-grow1" placeholder='{{phoneModal.placeHolder}}' bindinput='phoneModalInput' value='{{phoneModal.inputText}}' maxlength='11'></input>
+    </view>
+    <view class='div-line'></view> 
+    <view class='horizon line-height'>
+      <input class="input-modal flex-grow1" placeholder='{{phoneModal.picCodePlaceHolder}}' bindinput='picCodeModalInput' value='{{phoneModal.picCodeInputText}}' maxlength='11'></input>
+      <image class='icon-ValidCode' src='{{phoneModal.picValidCodeUrl}}' bindtap='tapPicValidCode'></image>
+    </view>
+    <view class='div-line'></view>  
+    <view class='horizon line-height'>
+      <input class="input-modal flex-grow1" placeholder='{{phoneModal.captchaPlaceholder}}' bindinput='captchaModalInput' value='{{phoneModal.captchaInputText}}' maxlength='6'></input>
+      <button class='captcha-modal' bindtap='phoneModalBtnTap'  disabled="{{phoneModal.btnDisabled}}">{{phoneModal.btnText}}</button>
+    </view>
+    <view class='div-line'></view>  
+  </view>
+</modal>
+
+<view class='container'>
+  <view class='div-line top40'></view>
+  <view class='horizon line-height bg-white'>
+    <text class='text-title left'>姓名</text>
+    <text class='text right flex-grow1 text-right'>{{items.name}}</text>
+  </view>
+  <view class='div-line'></view>
+  <view class='horizon line-height bg-white'>
+    <text class='text-title flex-grow1 left'>性别</text>
+    <radio-group class="horizon text-right" bindchange="sexPickerChange">
+      <label class="horizon radio" wx:for="{{sexArray}}" wx:key="item">
+        <radio class='zoom' value="{{index}}" checked="{{items.sex==index+1}}" />
+        <text class='text right text-right' >{{sexArray[index]}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class='div-line'></view>  
+  <view class='horizon line-height bg-white' catchtap='cardNumTap'>
+    <text class='text-title left'>证件号码</text>
+    <text class='text right flex-grow1 text-right'>{{tools.sub(items.credNo, 3, 4)}}</text>
+    <text class='text right'>></text>
+  </view>
+  <view class='div-line'></view>
+  <view class='horizon line-height bg-white'>
+    <text class='text-title left'>出生日期</text>
+    <picker mode="date" mode="date" value='{{items.birthday?items.birthday:""}}' start="{{startDate}}" end="{{endDate}}" class='flex-grow1 text-right' bindchange='datePickerChange'>
+      <text class='text flex-grow1 right text-right'>{{items.birthday?items.birthday:"未知"}}</text>
+    </picker>
+    <text class='text right'>></text>
+  </view>
+  <view class='div-line'></view>
+  <view class='horizon line-height bg-white' catchtap='phoneNumTap'>
+    <text class='text-title left'>手机号码</text>
+    <text class='text right flex-grow1 text-right'>{{tools.sub(items.phone, 3, 4)}}</text>
+    <text class='text right'>></text>
+  </view>
+  <view class='div-line'></view>  
+  <view class='div-line top40'></view>  
+  <view class='horizon line-height bg-white'>
+    <text class='text-title flex-grow1 left'>设置为默认</text>
+    <switch class='right zoom' bindchange="userSwitchChange" checked='{{items.isDefault==1}}'></switch>
+  </view>
+  <view class='div-line'></view>  
+  
+  <view class='btn-submit'  hover-class="btn-submit-hover" bindtap='unBindTap'>解除绑定</view>
+</view>

@@ -1,0 +1,20 @@
+/**
+ * 处理字符串为****格式，中间显示四个*号
+ * str 需要处理的字符串
+ * startLength 前面显示的字符串长度
+ * endLength 后面显示的字符串长度
+ */
+var sub = function (str, startLength, endLength) {
+  if (str.length == 0 || str == undefined) {
+    return "";
+  }
+  var length = str.length;
+  if (length >= startLength + endLength) {
+    return str.substring(0, startLength) + "****" + str.substring(length - endLength, length);
+  } else {
+    return str;
+  }
+}
+module.exports = {
+  sub: sub
+}

@@ -1,0 +1,27 @@
+<!--index.wxml-->
+
+<!-- 进入客服会话提示--> 
+<view class='modal-bg' wx:if="{{showConcatModal}}" catchtap='dismissConcatModal' catchtouchmove='move'>
+  <view class='modal-content-bg' >
+    <text class='modal-text'>在客服会话中回复\n“mm/萌萌/小萌伴”</text>
+    <button class='modal-btn' open-type='contact'>进入【小萌伴】APP</button>
+  </view>
+</view>
+
+<view class="container">
+
+  <view class="list-wrapper">
+    <block wx:for="{{menuitems}}" wx:key="item">
+      <navigator url="{{item.url}}" catchtap='{{item.tap}}' class="list-item" hover-class="list-item_active">
+        <view class='item'>
+          <image class='item-image' src='{{item.icon}}'></image>
+          <view class="item-text-view">
+            <text class="item-text">{{item.text}}</text>
+            <text class="item-text-hint margintop-text-hint">{{item.hint}}</text>
+          </view>
+          <image class='item-array' src='../../images/array.png'  mode='widthFix'></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

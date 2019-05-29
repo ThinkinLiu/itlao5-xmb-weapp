@@ -1,0 +1,51 @@
+<!--pages/user/bindUser.wxml-->
+
+<view class='bg'></view>
+<text class='top left right declare'>绑定后可以进行信息查询及相关操作：</text>
+
+<view class='horizon firstrow'>
+  <image class='left icon' src='../../images/icon-name.png'></image>
+  <input class='input' bindinput='nameInput' placeholder='请输入您的姓名'></input>
+</view>
+
+<view class='line'></view>
+
+<view class='horizon secondrow'>
+  <image class='left icon' src='../../images/icon-credno.png'></image>
+  <picker bindchange="bindPickerChange" value="{{cardNoArrayIndex}}" range="{{cardNoArray}}">
+    <view class="picker">{{cardNoArray[cardNoArrayIndex]}}</view>
+  </picker>
+  <view class='arrow'></view>
+  <input class='input' bindinput='cardInput' placeholder='请输入您的证件号'></input>
+</view>
+
+<view class='line'></view>
+
+<view class='horizon firstrow'>
+  <image class='left icon' src='../../images/icon-mobile.png'></image>
+  <input class='input' bindinput='teleInput' placeholder='请输入您的手机号'></input>
+</view>
+
+<view class='line'></view>
+
+<view class='horizon firstrow'>
+  <image class='left icon' src='../../images/icon-pic-code.png'></image>
+  <input class='input' bindinput='picValidCodeInput' placeholder='请输入图形验证码'></input>
+  <image class='icon-ValidCode' src='{{picValidCodeUrl}}' bindtap='tapPicValidCode'></image>
+</view>
+<view class='line'></view>
+
+<view class='horizon firstrow'>
+  <image class='left icon' src='../../images/icon-sms-code.png'></image>
+  <input class='input' bindinput='vertifyCodeInput' placeholder='请输入验证码'></input>
+  <button class='button' disabled="{{disabled}}" bindtap='tapSendVertifyCode'>{{time}}</button>
+</view>
+<view class='line'></view>
+
+<view class='bg'></view>
+<view class='vertical'>
+<text class='top left'>绑定说明</text>
+<text class='top left right declare'>1.请输入真实准确的“姓名”、“证件号”、“手机号”；\n2.“证件号”目前支持：大陆身份证、港澳台身份证；</text>
+</view>
+
+<button class='sureBtn' type='primary' bindtap='sureTap'>确定</button>

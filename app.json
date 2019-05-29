@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/mine",
+    "pages/user/bindUser",
+    "pages/user/userInfo",
+    "pages/error/update",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#449f45",
+    "navigationBarTitleText": "小萌伴",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#666666",
+    "selectedColor": "#449f45",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon-index.png",
+        "selectedIconPath": "images/icon-index-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/mine",
+        "iconPath": "images/icon-mine.png",
+        "selectedIconPath": "images/icon-mine-selected.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
