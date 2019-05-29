@@ -23,8 +23,7 @@
 ![未命名_meitu_1.jpg](https://upload-images.jianshu.io/upload_images/9166166-b58058e174754ada.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
 
 
-Github: [ThinkinLiu](https://github.com/ThinkinLiu) / [itlao5-xmb-weapp]([https://github.com/ThinkinLiu/itlao5-xmb-weapp](https://github.com/ThinkinLiu/itlao5-xmb-weapp)
-)
+Github: [ThinkinLiu](https://github.com/ThinkinLiu) / [itlao5-xmb-weapp](https://github.com/ThinkinLiu/itlao5-xmb-weapp])
 简书：[ThinkinLiu](https://www.jianshu.com/p/06030421ead3) 博客: [IT老五](https://itlao5.com)
 
 > 该方案的缺点很明显，需要用户操作过多，如果有更好的方案，欢迎一起探讨，多谢！
