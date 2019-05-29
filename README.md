@@ -31,3 +31,5 @@ Github: [ThinkinLiu](https://github.com/ThinkinLiu) / [itlao5-xmb-weapp](https:/
 ---
 
 ![IT老五（it-lao5）：关注公众号，一起源创，一起学习！](https://upload-images.jianshu.io/upload_images/9166166-931fd471780b7e64.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+IT老五（it-lao5）：关注公众号，一起源创，一起学习！
