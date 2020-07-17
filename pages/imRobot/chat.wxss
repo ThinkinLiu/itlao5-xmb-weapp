@@ -1,0 +1,458 @@
+/* pages/imRobot/chat.wxss */
+
+page {
+  background-color: #eee;
+}
+
+.chatCont {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 66px;
+  position: fixed;
+  box-sizing: border-box;
+}
+
+.chatCont scroll-view {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.wxEmoji {
+  width: 50rpx !important;
+  height: 50rpx !important;
+  padding: 0 2px;
+  vertical-align: text-top;
+}
+
+.leftMsg, .rightMsg {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.7;
+  padding: 10px 20px;
+  border-radius: 30rpx;
+  position: relative;
+  z-index: 10;
+}
+
+.leftMsg {
+  margin: 0 0 0 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.leftMsgTEXT .msgArrows {
+  top: 0;
+  left: -10px;
+  position: absolute;
+}
+
+.leftMsgTEXT {
+  background-color: #fff;
+}
+
+.leftMsgIMG {
+  padding: 0;
+}
+
+.leftMsgIMG .msgArrows {
+  display: none;
+}
+
+.leftMsgIMG image {
+  width: 250rpx;
+  height: auto;
+}
+
+.leftMsgRecord {
+  padding: 0;
+}
+
+.leftMsgRecord .msgArrows {
+  top: 3px;
+  left: -10px;
+  position: absolute;
+}
+
+.leftMsgRecord .voiceArea {
+  padding: 5px 25px 5px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+.rightMsg {
+  margin: 0 10px 0 0;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.rightMsgTEXT {
+  background-color: #96eb6a;
+}
+
+.rightMsgTEXT .msgArrows {
+  top: 0;
+  right: -10px;
+  position: absolute;
+}
+
+.rightMsgIMG {
+  padding: 0;
+}
+
+.rightMsgIMG .msgArrows {
+  display: none;
+}
+
+.rightMsgIMG image {
+  width: 250rpx;
+  height: auto;
+}
+
+.rightMsgRecord {
+  padding: 0;
+}
+
+.rightMsgRecord .voiceArea {
+  padding: 5px 10px 5px 25px;
+  border-radius: 10px;
+  background-color: #96eb6a;
+  position: relative;
+}
+
+.rightMsgRecord .msgArrows {
+  top: 3px;
+  right: -10px;
+  position: absolute;
+}
+
+.doctorDialogue .leftMsg .time {
+  text-align: right;
+  font-size: 22rpx;
+  color: #ccc;
+}
+
+.patientDialogue .leftMsgTEXT .time {
+  margin: 10px 0 0;
+}
+
+.patientDialogue .rightMsg .time {
+  text-align: left;
+  font-size: 22rpx;
+  color: #4da022;
+}
+
+.patientDialogue .rightMsgTEXT .time {
+  margin: 10px 0 0;
+}
+
+.voiceArea {
+  min-width: 80px;
+}
+
+.voiceArea  icon image {
+  width: 25px;
+  height: auto;
+}
+
+.voiceArea.o  icon, .voiceArea .fluctuate {
+  display: none;
+}
+
+/* .voiceArea .fluctuate {
+  right: 10px;
+  position: absolute;
+} */
+
+.voiceArea.o .fluctuate {
+  display: block;
+}
+
+.voiceArea text {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.leftMsgRecord .voiceArea {
+  text-align: right;
+}
+
+.leftMsgRecord .voiceArea  icon {
+  float: left;
+}
+
+.leftMsgRecord .redDot {
+  background-position: 90% center;
+}
+
+.rightMsgRecord .voiceArea  icon {
+  float: right;
+}
+
+.rightMsgRecord .redDot {
+  background-position: 10% center;
+}
+
+.portrait {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 9;
+}
+
+.portrait image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.msgArrows {
+  width: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+}
+
+.msgAL {
+  margin-left: 4px;
+}
+
+.msgAR {
+  margin-right: 4px;
+}
+
+.msgArrows image {
+  width: 10px;
+  height: 30px;
+}
+
+.doctorDialogue {
+  display: flex;
+  padding: 10px 0;
+}
+
+.patientDialogue {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.inputRoom {
+  width: 100%;
+  max-height: 250px;
+  padding: 0 10px;
+  bottom: 0;
+  border-color: #eee;
+  border-width: 1px 0 0;
+  border-style: solid;
+  background-color: #f9f9f9;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.inputRoom .chatTypeIn {
+  width: 100%;
+  padding: 10px 0 15px;
+}
+
+.inputRoom .extrasBTN, .inputRoom .phizBTN, .inputRoom .keyboardBTN,
+.inputRoom .voiceBTN {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.inputRoom .voiceBTN, .inputRoom .keyboardBTN, .inputRoom .phizBTN {
+  margin: 0 10px 0 0;
+}
+
+.inputRoom  .sendOut {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.inputRoom .extrasBTN image, .inputRoom .phizBTN image,
+.inputRoom .keyboardBTN image, .inputRoom .voiceBTN image {
+  width: 30px;
+  height: 30px;
+}
+
+.inputRoom input, .inputRoom .holdTalk {
+  height: 40px;
+  line-height: 40px;
+  margin: 0 10px 0 0;
+  padding: 0 10px;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #444;
+  border-color: #eee;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 50px;
+}
+
+.inputRoom .holdTalk {
+  text-align: center;
+}
+
+.inputRoom .holdTalk text:nth-child(2) {
+  display: none;
+}
+
+.inputRoom .holdTalk-hover {
+  background-color: #eee;
+}
+
+.inputRoom .holdTalk-hover text:nth-child(1) {
+  display: none;
+}
+
+.inputRoom .holdTalk-hover text:nth-child(2) {
+  display: block;
+}
+
+.inputRoom scroll-view {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.inputRoom .extras {
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 0 0 20px;
+  overflow: hidden;
+}
+
+.inputRoom .extras .e {
+  margin: 10px 20px 10px 0px;
+  float: left;
+  text-align: center;
+}
+
+.extras .e view {
+  width: 50px;
+  height: 50px;
+  margin: 0 0 2px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.extras .e view image {
+  width: 30px;
+  height: 30px;
+}
+
+.extras .e text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.phiz {
+  padding: 0 0 20px;
+}
+
+.phiz image {
+  width: 30px;
+  height: 30px;
+  margin: 10px 15px 10px 0;
+  float: left;
+}
+
+.fluctuate>view {
+  position: relative;
+  display: inline-block;
+  background-color: #5d5d5d;
+  height: 8px;
+  width: 3px;
+  margin: 0 2px;
+  border-radius: 20px;
+  vertical-align: 2px;
+  -webkit-animation: load 3s ease-in-out infinite;
+  animation: load 3s ease-in-out infinite;
+}
+
+.fluctuate .rectangleL-1 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.fluctuate .rectangleL-2 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.fluctuate .rectangleR-1 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.fluctuate .rectangleR-2 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+@-webkit-keyframes load {
+  0%, 100% {
+    -webkit-transform: scaleY(1);
+  }
+
+  16.67% {
+    -webkit-transform: scaleY(3);
+  }
+
+  33.33% {
+    -webkit-transform: scaleY(1);
+  }
+
+  50% {
+    -webkit-transform: scaleY(3);
+  }
+
+  66.67% {
+    -webkit-transform: scaleY(1);
+  }
+
+  83.34% {
+    -webkit-transform: scaleY(3);
+  }
+}
+
+@keyframes load {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+
+  16.67% {
+    transform: scaleY(3);
+  }
+
+  33.33% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(3);
+  }
+
+  66.67% {
+    transform: scaleY(1);
+  }
+
+  83.34% {
+    transform: scaleY(3);
+  }
+}

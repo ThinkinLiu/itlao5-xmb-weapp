@@ -1,0 +1,53 @@
+
+// 时间戳格式化为yyyy-MM-dd HH:mm:ss
+var formatTimestamp = function formatTimestamp(timestamp) {
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var Y = date.getFullYear();
+  var M = date.getMonth()+1;
+  var D = date.getDate();
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+
+
+  var now = getDate();
+  if (now.getFullYear() == Y) {
+      if (now.getMonth() + 1 == M) {
+          if (now.getDate() == D) {
+            return [h, m, s].map(formatNumber).join(":");
+          }
+      }
+      return [M, D].map(formatNumber).join("-") + " " + [h, m, s].map(formatNumber).join(":");
+  }
+  return [Y, M, D].map(formatNumber).join("-") + " " + [h, m, s].map(formatNumber).join(":");
+}
+// 时间戳格式化为日期yyyy-MM-dd
+var formatDate = function formatDate(timestamp) {
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var Y = date.getFullYear();
+  var M = date.getMonth()+1;
+  var D = date.getDate();
+  return [Y, M, D].map(formatNumber).join("-");
+}
+// 时间戳格式化为时间HH:mm:ss
+var formatTime = function formatTime(timestamp) {
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  return [h, m, s].map(formatNumber).join(":");
+}
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+function datetimeToDate(dtStr) {
+  return dtStr ? dtStr.split("T")[0] : "";
+}
+
+module.exports = {
+formatTimestamp: formatTimestamp,
+formatDate: formatDate,
+formatTime: formatTime,
+datetimeToDate: datetimeToDate
+}

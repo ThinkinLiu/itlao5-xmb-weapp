@@ -1,16 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/index/mine",
     "pages/user/bindUser",
     "pages/user/userInfo",
     "pages/error/update",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/imRobot/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#449f45",
-    "navigationBarTitleText": "小萌伴",
+    "navigationBarTitleText": "xmb",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -34,5 +35,6 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

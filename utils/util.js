@@ -88,6 +88,10 @@ function getDateFromDateTime(datetime) {
   return [year, month, day].map(formatNumber).join('-');
 }
 
+function getTimestamp() {
+  return Date.parse(new Date());
+}
+
 module.exports = {
   formatTime: formatTime,
   isBlank: isBlank,
@@ -95,5 +99,6 @@ module.exports = {
   isTelephone: isTelephone,
   isCardNum: isCardNum,
   getDate: getDate,
-  getDateFromDateTime: getDateFromDateTime
+  getDateFromDateTime: getDateFromDateTime,
+  getTimestamp: getTimestamp
 }

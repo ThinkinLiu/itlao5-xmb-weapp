@@ -1,0 +1,181 @@
+<!--pages/imRobot/chat.wxml-->
+<!-- 引入wxs脚本 -->
+<wxs src="../../wxs/timeUtil.wxs" module="timeUtil"></wxs>
+
+<view class="chatWindow">
+  <!-- 聊天框 -->
+
+  <view class="chatCont" style="bottom: {{chatBoxH}}px">
+    <scroll-view scroll-y scroll-into-view='msg-{{index}}' bindtap="eea" bindscrolltoupper="onPullDownRefresh">
+      <!-- <view class='scrollMsg'> -->
+      <block wx:key="time" wx:for='{{msgList}}' wx:for-index="index">
+        <!-- 会话（左） -->
+        <view wx:if='{{item.from!=userImId}}' id='msg-{{index}}' class="doctorDialogue">
+          <view class="portrait doctorPortraits">
+            <image src='{{doctorHeadImg}}' bindtap="tapLeftHeadImg" data-imId="{{item.from}}"></image>
+          </view>
+          <!-- 图片发送 -->
+          <view class="leftMsg leftMsgIMG" wx:if="{{item.type=='Image'}}">
+            <view class="cont">
+              <image src="{{item.thumbnail}}" mode="widthFix" data-img="{{item.imageUrl}}"
+                role="img" bindtap="previewImg"></image>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+          </view>
+          <!-- 图文表情 -->
+          <view class="leftMsg leftMsgTEXT" wx:elif="{{item.type=='Text'}}">
+            <view class="msgArrows msgAL">
+              <image src='../../images/leftMsgArrows.svg' mode='widthFix'></image>
+            </view>
+            <view class="cont">
+              <block wx:key="text" wx:for="{{item.emojiTexts}}" wx:for-item="emojiItem">
+                <block wx:if="{{emojiItem.node == 'text'}}">{{emojiItem.text}}</block>
+                <block wx:elif="{{emojiItem.node == 'element' && emojiItem.tag == 'emoji'}}">
+                  <image class="wxEmoji" src="{{emojiUrl}}{{emojiItem.text}}" mode="aspectFit" />
+                </block>
+              </block>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+          </view>
+          <!-- 语音 -->
+          <view class="leftMsg leftMsgRecord" wx:else="{{item.type=='Audio'}}">
+            <view class="msgArrows msgAL">
+              <image src='../../images/leftVoiceArrows.svg' mode='widthFix'></image>
+            </view>
+            <view class="cont">
+              <view class="voiceArea display wrap {{item.audioReaded ? '' : 'redDot'}} {{item.audioPlaying ? 'o' : ''}}" bindtap="audioPlay" data-index="{{index}}">
+                <icon>
+                  <image src="../../images/voiceICON.svg" mode="widthFix"></image>
+                  <!-- s关闭 -->
+                </icon>
+                <view class="fluctuate">
+                  <view class="rectangleL-1"></view>
+                  <view class="rectangleL-2"></view>
+                  <view class="rectangleR-2"></view>
+                  <view class="rectangleR-1"></view>
+                </view>
+                <!-- o打开 -->
+                <text class="flex1"> {{item.audioSecond}}"</text>
+              </view>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+          </view>
+        </view>
+
+        <!-- 会话（右） -->
+        <view wx:else id='msg-{{index}}' class="patientDialogue">
+          <!-- 图片 -->
+          <view class="rightMsg rightMsgIMG" wx:if="{{item.type=='Image'}}">
+            <view class="cont">
+              <image src="{{item.thumbnail}}" mode="widthFix" data-img="{{item.imageUrl}}"
+                role="img" bindtap="previewImg"></image>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+            <view class="msgArrows msgAR">
+              <image src='../../images/rightMsgArrows.svg' mode='widthFix'></image>
+            </view>
+          </view>
+          <!-- 图文表情 -->
+          <view class="rightMsg rightMsgTEXT" wx:elif="{{item.type=='Text'}}">
+            <view class="cont">
+              <block wx:for="{{item.emojiTexts}}" wx:for-item="emojiItem">
+                <block wx:if="{{emojiItem.node == 'text'}}">{{emojiItem.text}}</block>
+                <block wx:elif="{{emojiItem.node == 'element' && emojiItem.tag == 'emoji'}}">
+                  <image class="wxEmoji" src="{{emojiUrl}}{{emojiItem.text}}" mode="aspectFit" />
+                </block>
+              </block>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+            <view class="msgArrows msgAR">
+              <image src='../../images/rightMsgArrows.svg' mode='widthFix'></image>
+            </view>
+          </view>
+          <!-- 语音 -->
+          <view class="rightMsg rightMsgRecord" wx:else="{{item.type=='Audio'}}">
+            <view class="cont">
+              <view class="voiceArea display {{item.audioPlaying ? 'o' : ''}}" bindtap="audioPlay" data-index="{{index}}">
+                <text class="flex1"> {{item.audioSecond}}"</text>
+                <icon>
+                  <image src="../../images/voiceICON.svg" mode="widthFix"></image>
+                  <!-- s关闭 -->
+                </icon>
+                <view class="fluctuate">
+                  <view class="rectangleL-1"></view>
+                  <view class="rectangleL-2"></view>
+                  <view class="rectangleR-2"></view>
+                  <view class="rectangleR-1"></view>
+                </view>
+                <!-- o打开 -->
+
+              </view>
+            </view>
+            <view class="time">{{timeUtil.formatTimestamp(item.time)}}</view>
+            <view class="msgArrows msgAR">
+              <image src='../../images/rightMsgArrows.svg' mode='widthFix'></image>
+            </view>
+          </view>
+          <view class="portrait portraits">
+            <image src='{{userInfo.headImg}}'></image>
+          </view>
+        </view>
+
+      </block>
+      <!-- </view> -->
+    </scroll-view>
+  </view>
+
+  <!-- 输入框 -->
+  <view style='bottom: {{inputBottom}}px' class="inputRoom">
+    <view class="chatTypeIn display wrap">
+      <!-- 录音 -->
+      <view class="speakBOX display wrap flex1" hidden="{{keyboard}}">
+        <view class=" keyboardBTN" bindtap="keyboardBTN">
+          <image src='../../images/keyboard.svg' mode='widthFix'></image>
+        </view>
+        <view class="holdTalk flex1" hover-class="holdTalk-hover" bindtouchstart='touchStart' bindtouchend='touchEnd'>
+          <text>按住 说话</text>
+          <text>松开 结束</text>
+        </view>
+      </view>
+
+      <!-- 文本录入 -->
+      <view class="textBOX display wrap flex1" hidden="{{voice}}">
+        <view class="voiceBTN" bindtap="voiceBTN">
+          <image src='../../images/voice.svg' mode='widthFix'></image>
+        </view>
+        <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur' bindinput="input" class="flex1" focus="{{showInput}}"></input>
+      </view>
+
+      <!-- 表情按钮 -->
+      <view class="phizBTN" bindtap="phizBTN">
+        <image src='../../images/phiz.svg' mode='widthFix'></image>
+      </view>
+      <!-- 照片拍照按钮 -->
+      <view class="extrasBTN" bindtap="extrasBTN" hidden="{{extrasVAL}}">
+        <image src='../../images/sendIMG.svg' mode='widthFix'></image>
+      </view>
+      <!-- 发送按钮 -->
+      <view class="sendOut cs02_B" hidden="{{sendOutVAL}}" catchtap="sendClick">发 送</view>
+    </view>
+
+    <scroll-view scroll-y class="extras clear {{extras?'header_view_show':'header_view_hide'}}">
+      <view class="sendIMG e" catchtap="getPhoto">
+        <view>
+          <image src='../../images/getPhotos.svg' mode='widthFix'></image>
+        </view>
+        <text>照片</text>
+      </view>
+      <view class="takePhotos e" catchtap="takePhoto">
+        <view>
+          <image src='../../images/openCamera.svg' mode='widthFix'></image>
+        </view>
+        <text>拍照</text>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y class="phiz clear {{phiz?'header_view_show':'header_view_hide'}}">
+      <block wx:key="index" wx:for='{{emojiName}}' wx:for-index="index">
+        <image id="p{{index}}" src="{{emojiUrl}}{{emojiMap[emojiName[index]]}}" data-text="{{emojiName[index]}}" data-index="{{index}}" mode='widthFix' catchtap="tapEmoji"></image>
+      </block>
+    </scroll-view>
+  </view>
+</view>
